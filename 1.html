@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc mừng Ngày Quốc Tế Phụ Nữ 8/3</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #fff0f6, #ffe6f0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            padding-top: 40px;
+        }
+        
+        .container {
+            position: relative;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .text-box {
+            position: relative;
+            z-index: 5;
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #ff69b4;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+            font-weight: bold;
+        }
+        
+        .subtitle1 {
+            font-size: 28px;
+            color: #ff1493;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            animation: bounce 1s infinite;
+            animation-delay: 0.2s;
+            font-weight: bold;
+        }
+        
+        .subtitle2 {
+            font-size: 24px;
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 15px;
+            animation: bounce 1s infinite;
+            animation-delay: 0.4s;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .center-image {
+            width: 400px;
+            height: 400px;
+            animation: pulse 2s infinite, slideUp 1.5s ease-out;
+            margin-top: 40px;
+            z-index: 10;
+            position: relative;
+        }
+        
+        @keyframes slideUp {
+            0% { transform: translateY(100px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .flower-image {
+            position: fixed;
+            width: 70px;
+            height: 70px;
+            animation: float 6s infinite, fade 3s infinite;
+            z-index: 1;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-30px); opacity: 0; }
+        }
+        
+        @keyframes fade {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+        
+        /* Vị trí các hình hoa xung quanh */
+        .flower1 { top: 5%; left: 3%; animation-delay: 0s; }
+        .flower2 { top: 10%; left: 15%; animation-delay: 0.5s; }
+        .flower3 { top: 5%; right: 5%; animation-delay: 1s; }
+        .flower4 { top: 15%; right: 18%; animation-delay: 1.5s; }
+        .flower5 { bottom: 10%; left: 5%; animation-delay: 2s; }
+        .flower6 { bottom: 15%; left: 18%; animation-delay: 2.5s; }
+        .flower7 { bottom: 5%; right: 3%; animation-delay: 0.7s; }
+        .flower8 { bottom: 12%; right: 20%; animation-delay: 1.2s; }
+        .flower9 { top: 50%; left: 2%; animation-delay: 0.3s; }
+        .flower10 { top: 40%; right: 2%; animation-delay: 1.8s; }
+        .flower11 { top: 30%; left: 1%; animation-delay: 2.2s; }
+        .flower12 { bottom: 30%; right: 1%; animation-delay: 0.9s; }
+        .flower13 { top: 20%; left: 10%; animation-delay: 0.2s; }
+        .flower14 { top: 25%; right: 10%; animation-delay: 1.1s; }
+        .flower15 { bottom: 25%; left: 8%; animation-delay: 1.7s; }
+        .flower16 { bottom: 20%; right: 10%; animation-delay: 0.4s; }
+        .flower17 { top: 60%; left: 5%; animation-delay: 2.1s; }
+        .flower18 { top: 55%; right: 6%; animation-delay: 0.6s; }
+        .flower19 { bottom: 40%; left: 3%; animation-delay: 1.4s; }
+        .flower20 { bottom: 35%; right: 4%; animation-delay: 2.3s; }
+        .flower21 { top: 35%; left: 8%; animation-delay: 0.8s; }
+        .flower22 { top: 45%; right: 8%; animation-delay: 1.3s; }
+        .flower23 { bottom: 50%; left: 12%; animation-delay: 1.9s; }
+        .flower24 { bottom: 45%; right: 12%; animation-delay: 0.5s; }
+        .flower25 { top: 15%; left: 25%; animation-delay: 2.0s; }
+        .flower26 { top: 20%; right: 25%; animation-delay: 0.7s; }
+        .flower27 { bottom: 15%; left: 25%; animation-delay: 1.5s; }
+        .flower28 { bottom: 18%; right: 25%; animation-delay: 2.2s; }
+        .flower29 { top: 70%; left: 12%; animation-delay: 1.0s; }
+        .flower30 { top: 75%; right: 12%; animation-delay: 1.6s; }
+        
+        /* Pháo hoa */
+        .firework-particle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        
+        /* Hoa rơi */
+        .confetti {
+            position: fixed;
+            pointer-events: none;
+            animation: confetti-fall 3s linear forwards;
+            z-index: 4;
+        }
+        
+        @keyframes confetti-fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="text-box">
+            <h1> Chúc Mừng Ngày Quốc Tế Phụ Nữ 8/3 </h1>
+            <p class="subtitle1">Chúc các chị em luôn xinh đẹp</p>
+            <p class="subtitle2">✨ Hạnh Phúc và Thành Công ✨</p>
+        </div>
+        
+        <div class="center-image">
+            <img src="bohoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        </div>
+        
+        <!-- Hoa trang trí xung quanh -->
+        <div class="flower-image flower1">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower2">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower3">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower4">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower5">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower6">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower7">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower8">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower9">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower10">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower11">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower12">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower13">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower14">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower15">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower16">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower17">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower18">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower19">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower20">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower21">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower22">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower23">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower24">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower25">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower26">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower27">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower28">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower29">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div class="flower-image flower30">
+            <img src="hoa.png" alt="Hoa" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </div>
+
+    <script>
+        // Hiệu ứng pháo hoa
+        function createFirework(x, y) {
+            const colors = ['#ff69b4', '#ff1493', '#ff69b4', '#ffb6c1', '#ff00ff', '#ffc0cb'];
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'firework-particle';
+                particle.style.left = x + 'px';
+                particle.style.top = y + 'px';
+                particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                
+                const angle = (Math.PI * 2 * i) / particleCount;
+                const velocity = 5 + Math.random() * 8;
+                const vx = Math.cos(angle) * velocity;
+                const vy = Math.sin(angle) * velocity;
+                
+                document.body.appendChild(particle);
+                
+                let posX = x;
+                let posY = y;
+                let life = 1;
+                let velX = vx;
+                let velY = vy;
+                
+                const animate = () => {
+                    posX += velX;
+                    posY += velY;
+                    velY += 0.1; // Trọng lực
+                    life -= 0.015;
+                    
+                    particle.style.left = posX + 'px';
+                    particle.style.top = posY + 'px';
+                    particle.style.opacity = life;
+                    
+                    if (life > 0) {
+                        requestAnimationFrame(animate);
+                    } else {
+                        particle.remove();
+                    }
+                };
+                animate();
+            }
+        }
+        
+        // Hiệu ứng hoa rơi (confetti)
+        function createConfetti() {
+            const confettiPiece = document.createElement('div');
+            confettiPiece.className = 'confetti';
+            
+            const colors = ['#ff69b4', '#ff1493', '#ffb6c1', '#ff00ff', '#ffc0cb'];
+            const shapes = ['circle', 'square'];
+            const shape = shapes[Math.floor(Math.random() * shapes.length)];
+            
+            confettiPiece.style.left = Math.random() * 100 + '%';
+            confettiPiece.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confettiPiece.style.width = (Math.random() * 10 + 5) + 'px';
+            confettiPiece.style.height = (Math.random() * 10 + 5) + 'px';
+            
+            if (shape === 'circle') {
+                confettiPiece.style.borderRadius = '50%';
+            }
+            
+            document.body.appendChild(confettiPiece);
+            
+            setTimeout(() => confettiPiece.remove(), 3000);
+        }
+        
+        // Tạo hiệu ứng lúc load trang
+        window.addEventListener('load', () => {
+            // Tạo pháo hoa từ nhiều điểm
+            for (let i = 0; i < 8; i++) {
+                setTimeout(() => {
+                    createFirework(window.innerWidth / 2 + (Math.random() - 0.5) * 400, 
+                                   window.innerHeight / 4 + (Math.random() - 0.5) * 200);
+                }, i * 300);
+            }
+        });
+        
+        // Khi click chuột, tạo pháo hoa tại vị trí click
+        document.addEventListener('click', (e) => {
+            createFirework(e.clientX, e.clientY);
+            
+            // Tạo hoa rơi nhiều
+            for (let i = 0; i < 15; i++) {
+                createConfetti();
+            }
+        });
+        
+        // Tạo hoa rơi liên tục
+        setInterval(createConfetti, 200);
+        
+        // Tạo pháo hoa random mỗi 1.5 giây (nhiều hơn)
+        setInterval(() => {
+            createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 2);
+        }, 1500);
+        
+        // Thêm pháo hoa tự động mỗi 3 giây
+        setInterval(() => {
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    createFirework(Math.random() * window.innerWidth, Math.random() * window.innerHeight / 3);
+                }, i * 300);
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
